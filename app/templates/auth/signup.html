@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Account sign up {% endblock %}
+
+{%block content %} 
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-lg-4 col-xl-6"></div>
+                <div class="col-md-10 col-lg-8 col-xl-6 mx-auto">
+                    <div class="bg-primary-soft rounded-0 p-4 p-sm-5">
+                        <h2 class="text-upper">Sign up account </h2>
+                        <!-- Form START -->
+                        <form class="mt-4" method="post" , action="">
+                            {{ form.hidden_tag() }}
+                            <!-- first Name -->
+                            <div class="mb-3">
+                                <div class="form-group row">
+                                    <div class="col col-md-6 col-sm-6">
+                                        {{ form.firstName.label }}
+                                        {{ form.firstName(class_='form-control rounded-0') }}
+                                    </div>
+                                    <div class="col col-md-6 col-sm-6">
+                                        {{ form.firstName.label }}
+                                        {{ form.firstName(class_='form-control rounded-0') }}
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- email-->
+                            <div class="mb-3">
+                                {{ form.email.label }}
+                                {{ form.email(class_='form-control rounded-0') }}
+                            </div>
+                            <!-- Password -->
+                            <div class="mb-3">
+                                {{ form.password.label }}
+                                {{ form.password(class_='form-control rounded-0') }}
+                                <small id="passwordHelpInline" class="text-muted">
+                                    Must be 8-20 characters long.
+                                </small>
+                            </div>
+                            <!-- Password -->
+                            <div class="mb-3">
+                                {{ form.password_confirm.label }}
+                                {{ form.password_confirm(class_='form-control rounded-0') }}
+                            </div>
+                            <!-- Checkbox -->
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Yes i'd also like to sign up for additional
+                                    subscription</label>
+                            </div>
+                            <div class="mb-3">
+                                {{ form.recaptcha }}
+                            </div>
+                            <!-- Button -->
+                            <div class="row align-items-center">
+                                <div class="col-sm-4">
+                                    {{ form.submit(class_= 'btn btn-primary mb-2') }}
+                                </div>
+                                <div class="col-sm-8 text-sm-end">
+                                    <span>Have an account? <a href="{{url_for('auth.signin')}}"><u>Sign in</u></a></span>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Form END -->
+                        <hr>
+                        <!-- Social-media btn -->
+                        <div class="text-center">
+                            <p>Sign up with your social network for quick access</p>
+                            <ul class="list-unstyled d-sm-flex mt-3 justify-content-center">
+                                <li class="mx-2">
+                                    <a href="#" class="btn bg-facebook d-inline-block"><i class="fab fa-facebook-f me-2"></i> Sign up
+                                        with Facebook</a>
+                                </li>
+                                <li class="mx-2">
+                                    <a href="#" class="btn bg-google d-inline-block"><i class="fab fa-google me-2"></i> Sign up with
+                                        google</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </section> 
+{% endblock %}

@@ -1,0 +1,318 @@
+    
+	
+
+<!-- Header START -->
+<header class="navbar-light navbar-sticky header-static">
+	<div class="navbar-top d-none d-lg-block small">
+		<div class="container">
+			<div class="d-md-flex justify-content-between align-items-center my-2">
+				<!-- Top bar left -->
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link ps-0" href="{{url_for('main.about')}}">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{url_for('main.forum')}}">Forum</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{url_for('main.forum')}}">Buy now!</a>
+					</li>
+				</ul>
+
+				<!-- Top bar center-->
+				{% if current_user.is_authenticated %}
+				<ul class="nav">
+					<div class="nav-item ms-2 ms-md-3 dropdown">
+						<!-- Avatar -->
+						Hello {{ current_user.name }}!
+						
+						<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+							<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+						</a>
+	
+						<!-- Profile dropdown START -->
+						<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+							<!-- Profile info -->
+							<li class="px-3">
+								<div class="d-flex align-items-center">
+									<!-- Avatar -->
+									<div class="avatar me-3">
+										<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/03.jpg" alt="avatar">
+									</div>
+									<div>
+										<a class="h6 mt-2 mt-sm-0" href="#"> Louis Ferguson</a>
+										<p class="small m-0">example@gmail.com</p>
+									</div>
+								</div>
+								<hr>
+							</li>
+							<!-- Links -->
+							<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
+							<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
+							<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
+							<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
+							<li class="dropdown-divider mb-3"></li>
+							<li>
+								<div class="dropdown-item">
+									<div class="modeswitch m-0" id="darkModeSwitch">
+										<div class="switch"></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- Profile dropdown END -->
+					</div>
+				</ul>
+					<!-- Profile dropdown END -->
+				{% else %}	
+				<ul class="nav">
+					<li class="nav-item"> <a class="nav-link" href="{{url_for('auth.signin')}}">Login</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="{{url_for('auth.signup')}}">Register</a> </li>
+					<!-- Profile dropdown START -->
+				</ul>
+				{% endif %}
+
+				<!-- Top bar right -->
+				<div class="d-flex align-items-center">
+					<!-- Font size accessibility START -->
+					<div class="btn-group me-2" role="group" aria-label="font size changer">
+						<input type="radio" class="btn-check" name="fntradio" id="font-sm">
+						<label class="btn btn-xs btn-outline-primary mb-0" for="font-sm">A-</label>
+
+						<input type="radio" class="btn-check" name="fntradio" id="font-default" checked>
+						<label class="btn btn-xs btn-outline-primary mb-0" for="font-default">A</label>
+
+						<input type="radio" class="btn-check" name="fntradio" id="font-lg">
+						<label class="btn btn-xs btn-outline-primary mb-0" for="font-lg">A+</label>
+					</div>
+
+					<!-- Dark mode switch -->
+					<div class="modeswitch" id="darkModeSwitch">
+						<div class="switch"></div>
+					</div>
+
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-facebook-square"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-twitter-square"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-linkedin"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link px-2 fs-5" href="#"><i class="fab fa-youtube-square"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link ps-2 pe-0 fs-5" href="#"><i class="fab fa-vimeo"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Divider -->
+			<div class="border-bottom border-2 border-secondary opacity-2"></div>
+		</div>
+	</div>
+
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="{{url_for('main.index')}}">
+				<img class="navbar-brand-item light-mode-item" src="{{ url_for('static', filename = 'images/logo.png')}}" alt="logo">		 			
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="text-body h6 d-none d-sm-inline-block">Menu</span>
+			  <span class="navbar-toggler-icon"></span>
+		  </button>
+
+			<!-- Main navbar START -->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll mx-auto">
+					<!-- Nav item 1 Demos -->
+					<li class="nav-item"> <a class="nav-link {% if index %}active{% endif %} " href="{{url_for('main.index')}}">Home</a></li>
+
+					<!-- Nav item 2 About us -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle {% if about %} active {% endif %}" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+							<li> <a class="dropdown-item {% if about %} active {% endif %}" href="{{url_for('main.about')}}">About us</a></li>
+							<!-- Dropdown submenu --> 
+							<li class="dropdown-submenu dropend"> 
+								<a class="dropdown-item dropdown-toggle" href="#">Our Services</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="{{url_for('main.index')}}">Author Page</a> </li>
+									<li> <a class="dropdown-item" href="{{url_for('main.index')}}">Category page 1</a> </li>
+									<li> <a class="dropdown-item" href="{{url_for('main.index')}}">Category page 2</a> </li>
+									<li> <a class="dropdown-item" href="{{url_for('main.index')}}"># tag</a> </li>
+									<li> <a class="dropdown-item" href="{{url_for('main.index')}}">Search result</a> </li>
+								</ul>
+							</li> 
+							<li class="dropdown-divider"></li> 
+							<li> <a class="dropdown-item" href="{{url_for('main.contact')}}">Contact us</a></li> 
+							<li> <a class="dropdown-item" href="{{url_for('main.index')}}">Users</a></li> 
+							<li> 
+								<a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
+									<i class="text-warning fa-fw bi bi-life-preserver me-2"></i>Support
+								</a> 
+							</li>
+							<li> 
+								<a class="dropdown-item" href="{{url_for('main.index')}}" target="_blank">
+									<i class="text-danger fa-fw bi bi-card-text me-2"></i> Terms &amp; Conditions
+								</a> 
+							</li> 
+							<li> 
+								<a class="dropdown-item" href="https://blogzine.webestica.com/rtl" target="_blank">
+									<i class="text-info fa-fw bi bi-toggle-off me-2"></i> Privacy
+								</a> 
+							</li>
+							<li> 
+								<a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/" target="_blank">
+									<i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy blogzine!
+								</a> 
+							</li>
+						</ul>
+					</li>
+
+					<li class="nav-item"><a class="nav-link {% if projects %} active {% endif %}" href="{{ url_for('projects.index')}}"> Projects</a></li>
+
+					<!-- Nav item 3 Post -->
+					<li class="nav-item"> <a class="nav-link {% if courses %}active{% endif %} " href="{{url_for('courses.index')}}"> Courses </a></li>
+ 
+					<!-- Nav item 4 Mega menu -->
+					<li class="nav-item dropdown dropdown-fullwidth">
+						<a class="nav-link dropdown-toggle" href="#" id="megaMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Lifestyle</a>
+						<div class="dropdown-menu" aria-labelledby="megaMenu">
+							<div class="container">
+								<div class="row g-4 p-3 flex-fill">
+									<!-- Card item START -->
+									<div class="col-sm-6 col-lg-3">
+										<div class="card bg-transparent">
+											<!-- Card img -->
+											<img class="card-img rounded" src="assets/images/blog/16by9/small/01.jpg" alt="Card image">
+											<div class="card-body px-0 pt-3">
+												<h6 class="card-title mb-0"><a href="#" class="btn-link text-reset fw-bold">7 common mistakes everyone makes while traveling</a></h6>
+												<!-- Card info -->
+												<ul class="nav nav-divider align-items-center text-uppercase small mt-2">
+													<li class="nav-item">
+														<a href="#" class="text-reset btn-link">Joan Wallace</a>
+													</li>
+													<li class="nav-item">Feb 18, 2022</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- Card item END -->
+									<!-- Card item START -->
+									<div class="col-sm-6 col-lg-3">
+										<div class="card bg-transparent">
+											<!-- Card img -->
+											<img class="card-img rounded" src="assets/images/blog/16by9/small/02.jpg" alt="Card image">
+											<div class="card-body px-0 pt-3">
+												<h6 class="card-title mb-0"><a href="#" class="btn-link text-reset fw-bold">12 worst types of business accounts you follow on Twitter</a></h6>
+												<!-- Card info -->
+												<ul class="nav nav-divider align-items-center text-uppercase small mt-2">
+													<li class="nav-item">
+														<a href="#" class="text-reset btn-link">Lori Stevens</a>
+													</li>
+													<li class="nav-item">Jun 03, 2022</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- Card item END -->
+									<!-- Card item START -->
+									<div class="col-sm-6 col-lg-3">
+										<div class="card bg-transparent">
+											<!-- Card img -->
+											<img class="card-img rounded" src="assets/images/blog/16by9/small/03.jpg" alt="Card image">
+											<div class="card-body px-0 pt-3">
+												<h6 class="card-title mb-0"><a href="#" class="btn-link text-reset fw-bold">Skills that you can learn from business</a></h6>
+												<!-- Card info -->
+												<ul class="nav nav-divider align-items-center text-uppercase small mt-2">
+													<li class="nav-item">
+														<a href="#" class="text-reset btn-link">Judy Nguyen</a>
+													</li>
+													<li class="nav-item">Sep 07, 2022</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- Card item END -->
+									<!-- Card item START -->
+									<div class="col-sm-6 col-lg-3">
+										<div class="bg-primary-soft p-4 text-center h-100 w-100 rounded">
+											<span>The Blogzine</span>
+											<h3>Premium Membership</h3>
+											<p>Become a Member Today!</p>
+											<a href="#" class="btn btn-warning">View pricing plans</a>
+										</div>
+									</div>
+									<!-- Card item END -->
+								</div> <!-- Row END -->
+								<!-- Trending tags -->
+								<div class="row px-3">
+									<div class="col-12">
+										<ul class="list-inline mt-3">
+											<li class="list-inline-item">Trending tags:</li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-primary-soft">Travel</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-warning-soft">Business</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-success-soft">Tech</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-danger-soft">Gadgets</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-info-soft">Lifestyle</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-primary-soft">Vaccine</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-success-soft">Sports</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-danger-soft">Covid-19</a></li>
+											<li class="list-inline-item"><a href="#" class="btn btn-sm btn-info-soft">Politics</a></li>
+										</ul>
+									</div>
+								</div> <!-- Row END -->
+							</div>
+						</div>
+					</li>
+
+					<!-- Nav item 5 link-->
+					<li class="nav-item"> <a class="nav-link {% if articles %}active{% endif %} " href="{{url_for('blog.index')}}">Articles &amp; News </a></li>
+
+					<!-- Nav item 6 link-->
+					{% if login %}
+					<li class="nav-item"> <a class="nav-link {% if dashboard %}active{% endif %} " href="{{url_for('main.dashboard')}}">Dashboard</a></li>
+					{% endif %}
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Nav right START -->
+			<div class="nav flex-nowrap align-items-center">
+				<!-- Nav Button -->
+				<div class="nav-item d-none d-md-block">
+					<a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Subscribe!</a>
+				</div>
+				<!-- Nav Search -->
+				<div class="nav-item dropdown dropdown-toggle-icon-none nav-search">
+					<a class="nav-link dropdown-toggle" role="button" href="#" id="navSearch" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="bi bi-search fs-4"> </i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch">
+					  <form class="input-group">
+					    <input class="form-control border-success" type="search" placeholder="Search" aria-label="Search">
+					    <button class="btn btn-success m-0" type="submit">Search</button>
+					  </form>
+					</div>
+				</div>
+				<!-- Offcanvas menu toggler -->
+				<div class="nav-item">
+					<a class="nav-link p-0" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+						<i class="bi bi-text-right rtl-flip fs-2" data-bs-target="#offcanvasMenu"> </i>
+					</a>
+				</div>
+			</div>
+			<!-- Nav right END -->
+		</div>
+	</nav>
+	<!-- Logo Nav END --> 
+</header>
