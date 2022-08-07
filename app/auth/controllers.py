@@ -9,7 +9,7 @@ from flask_login import login_user, logout_user, login_required
 from app import auth
 #from  ..  import get_db
 
-auth = Blueprint('auth', __name__,template_folder='../templates/auth', url_prefix='/auth')
+auth = Blueprint('auth', __name__, template_folder='../templates/auth', url_prefix='/auth')
 
 # signin or login
 @auth.route('/signin', methods=('GET', 'POST'))
@@ -28,10 +28,16 @@ def signin():
 
 
     if form.validate_on_submit():
-        user = User.query.filter_by(username = form.username.data).one()
-        login_user(user, remember=form.remember.data)
-        flash( "Logged in successfully.", category='success')
-        return redirect(url_for("main.index"))
+        user = User.query.filter_by(email = form.email.data).first()
+        if user is not None and user.verify_password(form.password.data):
+            login_user(user, remember=form.remember.data)
+            flash( "Logged in successfully.", category='success')
+            next = request.args.get('next')
+            if next is None or not next.startswith('/'):
+                next = url_for("main.index")
+            return redirect(next)
+        flash('Invalid email or password')
+    render_template('auth/signin.html', form=form, openid_form=openid_form)
     
     
     openid_errors = oid.fetch_error()
@@ -56,12 +62,13 @@ def signup():
         )
 
     if form.validate_on_submit():
-        new_user = User(form.username.data)
+        new_user = User(username = form.username.data,
+                        email = form.email.data)
         new_user.set_password(form.password.data)
         db.session.add(new_user)
         db.session.commit()
 
-        flash('User account registration successful', category='success')
+        flash('You have successfully registered', category='success')
         return redirect(url_for('auth.login'))
 
     openid_errors = oid.fetch_error()

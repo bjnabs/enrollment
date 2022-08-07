@@ -140,7 +140,7 @@
 						<!-- News Post -->
 						<div class="news_post d-flex flex-row align-items-start justify-content-start">
 							<div>
-								<div class="news_post_image"><img src="images/news_1.jpg"
+								<div class="news_post_image"><img src="{{url_for('static', filename='images/news_1.jpg')}}"
 										alt="https://unsplash.com/@beccatapert"></div>
 							</div>
 							<div class="news_post_body">
@@ -153,7 +153,7 @@
 						<!-- News Post -->
 						<div class="news_post d-flex flex-row align-items-start justify-content-start">
 							<div>
-								<div class="news_post_image"><img src="images/news_2.jpg"
+								<div class="news_post_image"><img src="{{url_for('static', filename='images/news_2.jpg')}}"
 										alt="https://unsplash.com/@nbb_photos"></div>
 							</div>
 							<div class="news_post_body">
@@ -166,7 +166,7 @@
 						<!-- News Post -->
 						<div class="news_post d-flex flex-row align-items-start justify-content-start">
 							<div>
-								<div class="news_post_image"><img src="images/news_3.jpg"
+								<div class="news_post_image"><img src="{{url_for('static', filename='images/news_3.jpg')}}"
 										alt="https://unsplash.com/@rawpixel"></div>
 							</div>
 							<div class="news_post_body">
@@ -179,7 +179,7 @@
 						<!-- News Post -->
 						<div class="news_post d-flex flex-row align-items-start justify-content-start">
 							<div>
-								<div class="news_post_image"><img src="images/news_4.jpg"
+								<div class="news_post_image"><img src="{{url_for('static', filename='images/news_4.jpg')}}"
 										alt="https://unsplash.com/@jtylernix"></div>
 							</div>
 							<div class="news_post_body">
@@ -201,7 +201,7 @@
 		<!-- About and Newsletter START -->
 		<div class="row pt-3 pb-4">
 			<div class="col-md-3">
-				<img src="{{url_for('static', filename='images/home_logo.png')}}" alt="footer logo">
+				<img src="{{url_for('static', filename='logo/Logo_wb_White.png')}}" alt="footer logo">
 			</div>
 			<div class="col-md-5">
 				<p class="text-muted">The next-generation blog, news, and magazine theme for you to start sharing your stories today! This Bootstrap 5 based theme is ideal for all types of sites that deliver the news.</p>
@@ -340,11 +340,14 @@
 			</ul>
 		</div>
 		<!-- Hot topics END -->
+		
 	</div>
 
 	<!-- Footer copyright START -->
 	<div class="bg-dark-overlay-3 mt-5">
 		<div class="container">
+			<!-- Divider -->
+			<hr>
 			<div class="row align-items-center justify-content-md-between py-4">
 				<div class="col-md-6">
 					<!-- Copyright -->

@@ -4,7 +4,7 @@ from flask import (Blueprint, flash, g, redirect,
 from werkzeug.exceptions import abort
 #from app.db import get_db
 
-courses = Blueprint('courses', __name__, template_folder='../templates/courses', url_prefix='/courses')
+courses = Blueprint('courses', __name__, template_folder='../templates/courses', url_prefix='/course')
 
 
 @courses.route('/index', methods=['GET', 'POST'])

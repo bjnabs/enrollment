@@ -130,161 +130,43 @@ div.slide-buttons {
 	margin-right: 26px;
 }
 
- 
+.btn-login {
+	font-size: 0.9rem;
+	letter-spacing: 0.05rem;
+	padding: 0.75rem 1rem;
+}
 
+.btn-google {
+	color: white !important;
+	background-color: #ea4335;
+}
+
+.btn-facebook {
+	color: white !important;
+	background-color: #3b5998;
+}
 /**** Featured section *****/
 
 .featured
 {
 	width: 100%;
-	z-index: 2;
+	z-index: 1; 
 }
 .featured .featured-map
 {
 	width: 100%; 
-	margin-top: -140px;
+	margin-top: -250px; 
 	border: #2c2b31 solid 1px; 
-	background: #fff;
-	padding: 0.5rem 0.5rem;
+	background: #fff; 
+
 
 }
 
 .featured .featured-map .map-container { 
-	height: 600px; 
+	height: 500px; 
 }
  
-.featured .featured-map:first-child
-{
-	padding-right: 0;
-}
-.featured .featured-map:last-child
-{
-	padding-left: 0;
-	float: right;
-}
-
-.featured_content
-{
-	padding-left: 50px;
-	padding-top: 63px;
-	padding-right: 50px;
-	padding-bottom: 41px;
-	background: #f2f1f8;
-}
-.featured_content::after
-{
-	display: block;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 3px;
-	background: #ff6600;
-	content: '';
-}
-.featured_tag
-{
-	height: 31px;
-	background: #ff6600;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.featured_tag:hover
-{
-	background: #2c2b31;
-}
-.featured_tag a
-{
-	display: block;
-	padding-left: 21px;
-	padding-right: 21px;
-	line-height: 31px;
-	font-size: 14px;
-	color: #FFFFFF;
-	font-weight: 400;
-}
-.featured_price span
-{
-	display: inline-block;
-	position: relative;
-	font-size: 18px;
-	color: #ff6600;
-	-webkit-transform: translateY(2px);
-	-moz-transform: translateY(2px);
-	-ms-transform: translateY(2px);
-	-o-transform: translateY(2px);
-	transform: translateY(2px);
-}
-.featured_title
-{
-	margin-top: 29px;
-}
-.featured_title h3 a
-{
-	color: #2c2b31;
-	font-weight: 600;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.featured_title h3 a:hover
-{
-	color: #ff6600;
-}
-.featured_text
-{
-	margin-top: 18px;
-	line-height: 1.92;
-}
-.featured_footer
-{
-	margin-top: 55px;
-}
-.featured_author_image
-{
-	width: 37px;
-	height: 37px;
-	overflow: hidden;
-	border-radius: 50%;
-}
-.featured_author_image img
-{
-	max-width: 100%;
-}
-.featured_author_name
-{
-	margin-left: 16px;
-}
-.featured_author_name,
-.featured_author_name a
-{
-	font-size: 14px;
-	color: #2c2b31;
-	font-weight: 500;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.featured_author_name a:hover
-{
-	color: #ff6600;
-}
-.featured_background
-{
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
-
+ 
 /** courses custom styling */
 .section_title h2 {
 	font-weight: 700;
@@ -297,7 +179,29 @@ div.slide-buttons {
 	margin-top: 66px;
 	line-height: 2.14;
 }
+.custom_1 {
+	background-image:url(../images/teacher_1.jpg);
+	background-position: center left;
+	background-size: cover;
+}
 
+.custom_2 {
+	background-image: url(../images/teacher_2.jpg);
+	background-position: center left;
+	background-size: cover;
+}
+
+.custom_3 {
+	background-image: url(../images/teacher_3.jpg);
+	background-position: center left;
+	background-size: cover;
+}
+
+.custom_4 {
+	background-image: url(../images/teacher_4.jpg);
+	background-position: center left;
+	background-size: cover;
+}
 /*********************************
 6. Courses
 *********************************/
@@ -430,139 +334,6 @@ div.slide-buttons {
 	color: #6c6a74 !important;
 }
 
-.featured_row {
-	margin-top: 100px;
-}
-
-.featured_col:first-child {
-	padding-right: 0;
-}
-
-.featured_col:last-child {
-	padding-left: 0;
-}
-
-.featured_content {
-	padding-left: 50px;
-	padding-top: 63px;
-	padding-right: 50px;
-	padding-bottom: 41px;
-	background: #f2f1f8;
-}
-
-.featured_content::after {
-	display: block;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 3px;
-	background: #ff6600;
-	content: '';
-}
-
-.featured_tag {
-	height: 31px;
-	background: #ff6600;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-
-.featured_tag:hover {
-	background: #2c2b31;
-}
-
-.featured_tag a {
-	display: block;
-	padding-left: 21px;
-	padding-right: 21px;
-	line-height: 31px;
-	font-size: 14px;
-	color: #FFFFFF;
-	font-weight: 400;
-}
-
-.featured_price span {
-	display: inline-block;
-	position: relative;
-	font-size: 18px;
-	color: #ff6600;
-	-webkit-transform: translateY(2px);
-	-moz-transform: translateY(2px);
-	-ms-transform: translateY(2px);
-	-o-transform: translateY(2px);
-	transform: translateY(2px);
-}
-
-.featured_title {
-	margin-top: 29px;
-}
-
-.featured_title h3 a {
-	color: #2c2b31;
-	font-weight: 600;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-
-.featured_title h3 a:hover {
-	color: #ff6600;
-}
-
-.featured_text {
-	margin-top: 18px;
-	line-height: 1.95;
-}
-
-.featured_footer {
-	margin-top: 55px;
-}
-
-.featured_author_image {
-	width: 37px;
-	height: 37px;
-	overflow: hidden;
-	border-radius: 50%;
-}
-
-.featured_author_image img {
-	max-width: 100%;
-}
-
-.featured_author_name {
-	margin-left: 16px;
-}
-
-.featured_author_name,
-.featured_author_name a {
-	font-size: 14px;
-	color: #2c2b31;
-	font-weight: 500;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-
-.featured_author_name a:hover {
-	color: #ff6600;
-}
-
-.featured_background {
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
-
  /**  ***/
 .group-section {
 	width: 100%;
@@ -593,7 +364,7 @@ div.slide-buttons {
 .courses .search {
 	padding: 3rem; 
 	margin-top: 3rem;
-	background-color: #6c6a74;
+	background-color: var(--bs-secondary);
 }
 
 .courses .search_form {
@@ -860,6 +631,7 @@ div.slide-buttons {
 	width: 100%;
 	padding-top: 156px;
 	padding-bottom: 161px;
+	background-color: var(--bs-secondary);
 }
 
 .milestones_container {

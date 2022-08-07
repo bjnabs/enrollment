@@ -8,7 +8,7 @@
                 <div class="col-md-2 col-lg-4 col-xl-6"></div>
                 <div class="col-md-10 col-lg-8 col-xl-6 mx-auto">
                     <div class="bg-primary-soft rounded-0 p-4 p-sm-5">
-                        <h2 class="text-upper">Sign up account </h2>
+                        <h2 class="text-upper">Account Sign up </h2>
                         <!-- Form START -->
                         <form class="mt-4" method="post" , action="">
                             {{ form.hidden_tag() }}
@@ -16,13 +16,9 @@
                             <div class="mb-3">
                                 <div class="form-group row">
                                     <div class="col col-md-6 col-sm-6">
-                                        {{ form.firstName.label }}
-                                        {{ form.firstName(class_='form-control rounded-0') }}
-                                    </div>
-                                    <div class="col col-md-6 col-sm-6">
-                                        {{ form.firstName.label }}
-                                        {{ form.firstName(class_='form-control rounded-0') }}
-                                    </div>
+                                        {{ form.username.label }}
+                                        {{ form.username(class_='form-control rounded-0') }}
+                                    </div> 
                                 </div>
                             </div> 
                             <!-- email-->
@@ -40,8 +36,8 @@
                             </div>
                             <!-- Password -->
                             <div class="mb-3">
-                                {{ form.password_confirm.label }}
-                                {{ form.password_confirm(class_='form-control rounded-0') }}
+                                {{ form.password_c.label }}
+                                {{ form.password_c(class_='form-control rounded-0') }}
                             </div>
                             <!-- Checkbox -->
                             <div class="mb-3 form-check">

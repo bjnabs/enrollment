@@ -4,8 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine("postgresql+psycopg2://postgres:N%40b%242107@localhost:5432/wordcount",
-                       echo=True, encoding='UTF-8')
+engine = create_engine("postgresql+psycopg2://postgres:N%40b%242107@localhost:5432/wordcount", echo=True, encoding='UTF-8')
 
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 Base = declarative_base()

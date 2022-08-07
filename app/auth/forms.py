@@ -2,14 +2,15 @@ import email
 from re import sub
 from flask_wtf import FlaskForm as Form
 from flask_wtf import RecaptchaField
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, EmailField
-from wtforms.validators import DataRequired, Length, EqualTo, URL
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, EmailField, ValidationError
+from wtforms.validators import DataRequired, Length, EqualTo, URL, Regexp
 from .models import User
 
 
 class LoginForm(Form):
-    username = EmailField('Email or Username', [DataRequired(), Length(max=55)])
-    password = PasswordField('Password', [DataRequired()])
+    #username = StringField('Username', [DataRequired(), Length(min=6, max=10)])
+    email = EmailField('Email Address', [DataRequired(), Length(max=30)])
+    password = PasswordField('Password', [DataRequired(), Length(min=8)])
     remember = BooleanField("Remember Me")
     submit = SubmitField('Sign in')
 
@@ -20,14 +21,14 @@ class LoginForm(Form):
             return False
 
         # Does our user exist
-        user = User.query.filter_by(username=self.username.data).first()
+        user = User.query.filter_by(username=self.email.data).first()
         if not user:
-            self.username.errors.append('Invalid username or password')
+            self.username.errors.append('Invalid email or password')
             return False
 
         # Do the passwords match
         if not user.check_password(self.password.data):
-            self.username.errors.append('Invalid username or password')
+            self.username.errors.append('Invalid email or password')
             return False
         return True
 
@@ -37,12 +38,15 @@ class OpenIDForm(Form):
 
 
 class RegisterForm(Form):
-    firstName = StringField('First Name', validators=[DataRequired()])
-    lastName = StringField('Last Name', validators=[DataRequired()])
-    email = EmailField('Email', validators=[DataRequired()])
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    password_confirm = PasswordField(
+    #firstName = StringField('First Name', validators=[DataRequired()])
+    #lastName = StringField('Last Name', validators=[DataRequired()])
+    username = StringField('Username', validators=[DataRequired(),
+                                                   Length(max=10),
+                                                   Regexp('^[A-Za-z0-9_.]*$', 0, 'Usernames must have only letters, numbers, dots or underscores')])
+    email = EmailField('Email Address', validators=[DataRequired(), Length(1,64)])
+    password = PasswordField('Password', validators=[DataRequired(), EqualTo(
+        'password_c', message='Passwords must match')])
+    password_c = PasswordField(
         'Confirm Password', validators=[DataRequired()])
     submit = SubmitField('Register')
     recaptcha = RecaptchaField()
@@ -59,3 +63,7 @@ class RegisterForm(Form):
             self.username.errors.append("User account with this email already exists")
             return False
         return True
+
+    def validate_email(self, email):
+        if User.query.filter_by(email=self.email.data).first():
+            raise ValidationError('Account with this email already exists') 

@@ -29,7 +29,7 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #002147;
-  --bs-secondary: #2c2b31;
+  --bs-secondary: #081828;
   --bs-success: #0cbc87;
   --bs-info: #4f9ef8;
   --bs-warning: #ffae00;
@@ -55,7 +55,7 @@
   --bs-body-font-size: 0.875rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #595d69;
+  --bs-body-color: #243238;
   --bs-body-bg: #fff;
 }
 
@@ -4952,7 +4952,8 @@ textarea.form-control-lg {
 .navbar-light .navbar-brand {
   color: rgba(0, 0, 0, 0.9);
 }
-.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+.navbar-light .navbar-brand:hover, 
+.navbar-light .navbar-brand:focus {
   color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-nav .nav-link {
@@ -4987,7 +4988,8 @@ textarea.form-control-lg {
 .navbar-dark .navbar-brand {
   color: #fff;
 }
-.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+.navbar-dark .navbar-brand:hover, 
+.navbar-dark .navbar-brand:focus {
   color: #fff;
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -14769,7 +14771,7 @@ header .navbar-nav .nav-link.active:before {
   padding-bottom: 30px;
 }
 .navbar-brand .navbar-brand-item {
-  height: 30px;
+  height: 40px;
   display: block;
   width: auto;
 }
@@ -16192,7 +16194,7 @@ html.font-sm {
 }
 .bg-dark-overlay-3:before {
   content: " ";
-  background: #000;
+  background: var(--bs-secondary);
   opacity: 0.3;
   position: absolute;
   top: 0;

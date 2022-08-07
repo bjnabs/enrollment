@@ -15,8 +15,7 @@
 					<div class="container">
 						<div class="row content-container">
 							<div class="col">
-								<div class="text-center">
-									<div class="slide-logo"><img src="{{url_for('static', filename='images/home_logo.png')}}" alt=""></div>
+								<div class="text-center"> 
 									<div class="slide-text">
 										<div class="slide-title">Complete Online Courses 1</div>
 										<div class="slide-subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -46,8 +45,7 @@
 					<div class="container">
 						<div class="row content-container">
 							<div class="col">
-								<div class="text-center">
-									<div class="slide-logo"><img src="{{url_for('static', filename='images/home_logo.png')}}" alt=""></div>
+								<div class="text-center"> 
 									<div class="slide-text">
 										<div class="slide-title">Complete Online Courses 2</div>
 										<div class="slide-subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -77,8 +75,7 @@
 					<div class="container">
 						<div class="row content-container">
 							<div class="col">
-								<div class="text-center">
-									<div class="slide-logo"><img src="{{url_for('static', filename='images/home_logo.png')}}" alt=""></div>
+								<div class="text-center"> 
 									<div class="slide-text">
 										<div class="slide-title">Complete Online Courses 3</div>
 										<div class="slide-subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -109,15 +106,264 @@
 	<!-- Featured section -->
 	<section class="featured">
 		<div class="container">
-			<div class="row">
-				<div class="featured-map">  
-					<div id="map-canvas" class="col-lg-8 col-md-7 col-sm-6  map-container"> </div> 
-					<div class="col-lg-4, col-md-5 col-sm-6"> Here is for a form </div>
+			<div class="featured-map">
+				<div class="row">
+					<div class="col col-md-4 col-xxl-4">
+						<div class="card flex-fill w-100">
+							<div class="card-header">
+								<div class="card-actions float-end">
+									<div class="dropdown position-relative">
+										<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+												fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+												stroke-linejoin="round" class="feather feather-more-horizontal align-middle">
+												<circle cx="12" cy="12" r="1"></circle>
+												<circle cx="19" cy="12" r="1"></circle>
+												<circle cx="5" cy="12" r="1"></circle>
+											</svg>
+										</a>
+				
+										<div class="dropdown-menu dropdown-menu-end">
+											<a class="dropdown-item" href="#">Action</a>
+											<a class="dropdown-item" href="#">Another action</a>
+											<a class="dropdown-item" href="#">Something else here</a>
+										</div>
+									</div>
+								</div>
+								<h5 class="card-title mb-0">Browser Usage</h5>
+							</div>
+							<div class="card-body d-flex">
+								<div class="align-self-center w-100">
+									<div class="py-3">
+										<div class="chart chart-xs">
+											<div class="chartjs-size-monitor">
+												<div class="chartjs-size-monitor-expand">
+													<div class=""></div>
+												</div>
+												<div class="chartjs-size-monitor-shrink">
+													<div class=""></div>
+												</div>
+											</div>
+											<canvas id="chartjs-dashboard-pie" width="466" height="187"
+												style="display: block; height: 150px; width: 373px;"
+												class="chartjs-render-monitor"></canvas>
+										</div>
+									</div>
+				
+									<table class="table mb-0">
+										<tbody>
+											<tr>
+												<td><i class="fas fa-circle text-primary fa-fw"></i> Chrome <span
+														class="badge badge-success-light">+12%</span></td>
+												<td class="text-end">4306</td>
+											</tr>
+											<tr>
+												<td><i class="fas fa-circle text-warning fa-fw"></i> Firefox <span
+														class="badge badge-danger-light">-3%</span></td>
+												<td class="text-end">3801</td>
+											</tr>
+											<tr>
+												<td><i class="fas fa-circle text-danger fa-fw"></i> Edge</td>
+												<td class="text-end">1689</td>
+											</tr>
+											<tr>
+												<td><i class="fas fa-circle text-dark fa-fw"></i> Other</td>
+												<td class="text-end">3251</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col col-md-4 col-xxl-4">
+						<div class="card flex-fill">
+							<div class="card-header">
+								<div class="card-actions float-end">
+									<div class="dropdown position-relative">
+										<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+												fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+												stroke-linejoin="round" class="feather feather-more-horizontal align-middle">
+												<circle cx="12" cy="12" r="1"></circle>
+												<circle cx="19" cy="12" r="1"></circle>
+												<circle cx="5" cy="12" r="1"></circle>
+											</svg>
+										</a>
+				
+										<div class="dropdown-menu dropdown-menu-end">
+											<a class="dropdown-item" href="#">Action</a>
+											<a class="dropdown-item" href="#">Another action</a>
+											<a class="dropdown-item" href="#">Something else here</a>
+										</div>
+									</div>
+								</div>
+								<h5 class="card-title mb-0">Calendar</h5>
+							</div>
+							<div class="card-body d-flex">
+								<div class="align-self-center w-100">
+									<div class="chart">
+										<div id="datetimepicker-dashboard" class="flatpickr-input" readonly="readonly"></div>
+										<div class="flatpickr-calendar animate inline" tabindex="-1">
+											<div class="flatpickr-months"><span class="flatpickr-prev-month"><span
+														class="fas fa-chevron-left" title="Previous month"></span></span>
+												<div class="flatpickr-month">
+													<div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months"
+															aria-label="Month" tabindex="-1">
+															<option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">
+																January</option>
+															<option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">
+																February</option>
+															<option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March
+															</option>
+															<option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April
+															</option>
+															<option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May
+															</option>
+															<option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June
+															</option>
+															<option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July
+															</option>
+															<option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August
+															</option>
+															<option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">
+																September</option>
+															<option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">
+																October</option>
+															<option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">
+																November</option>
+															<option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">
+																December</option>
+														</select>
+														<div class="numInputWrapper"><input class="numInput cur-year" type="number"
+																tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span
+																class="arrowDown"></span></div>
+													</div>
+												</div><span class="flatpickr-next-month"><span class="fas fa-chevron-right"
+														title="Next month"></span></span>
+											</div>
+											<div class="flatpickr-innerContainer">
+												<div class="flatpickr-rContainer">
+													<div class="flatpickr-weekdays">
+														<div class="flatpickr-weekdaycontainer">
+															<span class="flatpickr-weekday">
+																Sun</span><span class="flatpickr-weekday">Mon</span><span
+																class="flatpickr-weekday">Tue</span><span
+																class="flatpickr-weekday">Wed</span><span
+																class="flatpickr-weekday">Thu</span><span
+																class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+															</span>
+														</div>
+													</div>
+													<div class="flatpickr-days" tabindex="-1">
+														<div class="dayContainer"><span class="flatpickr-day prevMonthDay"
+																aria-label="March 27, 2022" tabindex="-1">27</span><span
+																class="flatpickr-day prevMonthDay" aria-label="March 28, 2022"
+																tabindex="-1">28</span><span class="flatpickr-day prevMonthDay"
+																aria-label="March 29, 2022" tabindex="-1">29</span><span
+																class="flatpickr-day prevMonthDay" aria-label="March 30, 2022"
+																tabindex="-1">30</span><span class="flatpickr-day prevMonthDay"
+																aria-label="March 31, 2022" tabindex="-1">31</span><span
+																class="flatpickr-day " aria-label="April 1, 2022"
+																tabindex="-1">1</span><span class="flatpickr-day "
+																aria-label="April 2, 2022" tabindex="-1">2</span><span
+																class="flatpickr-day " aria-label="April 3, 2022"
+																tabindex="-1">3</span><span class="flatpickr-day "
+																aria-label="April 4, 2022" tabindex="-1">4</span><span
+																class="flatpickr-day " aria-label="April 5, 2022"
+																tabindex="-1">5</span><span class="flatpickr-day "
+																aria-label="April 6, 2022" tabindex="-1">6</span><span
+																class="flatpickr-day " aria-label="April 7, 2022"
+																tabindex="-1">7</span><span class="flatpickr-day "
+																aria-label="April 8, 2022" tabindex="-1">8</span><span
+																class="flatpickr-day " aria-label="April 9, 2022"
+																tabindex="-1">9</span><span class="flatpickr-day "
+																aria-label="April 10, 2022" tabindex="-1">10</span><span
+																class="flatpickr-day " aria-label="April 11, 2022"
+																tabindex="-1">11</span><span class="flatpickr-day "
+																aria-label="April 12, 2022" tabindex="-1">12</span><span
+																class="flatpickr-day " aria-label="April 13, 2022"
+																tabindex="-1">13</span><span class="flatpickr-day "
+																aria-label="April 14, 2022" tabindex="-1">14</span><span
+																class="flatpickr-day " aria-label="April 15, 2022"
+																tabindex="-1">15</span><span class="flatpickr-day "
+																aria-label="April 16, 2022" tabindex="-1">16</span><span
+																class="flatpickr-day " aria-label="April 17, 2022"
+																tabindex="-1">17</span><span class="flatpickr-day "
+																aria-label="April 18, 2022" tabindex="-1">18</span><span
+																class="flatpickr-day " aria-label="April 19, 2022"
+																tabindex="-1">19</span><span class="flatpickr-day "
+																aria-label="April 20, 2022" tabindex="-1">20</span><span
+																class="flatpickr-day " aria-label="April 21, 2022"
+																tabindex="-1">21</span><span class="flatpickr-day "
+																aria-label="April 22, 2022" tabindex="-1">22</span><span
+																class="flatpickr-day " aria-label="April 23, 2022"
+																tabindex="-1">23</span><span class="flatpickr-day today"
+																aria-label="April 24, 2022" aria-current="date"
+																tabindex="-1">24</span><span class="flatpickr-day "
+																aria-label="April 25, 2022" tabindex="-1">25</span><span
+																class="flatpickr-day selected" aria-label="April 26, 2022"
+																tabindex="-1">26</span><span class="flatpickr-day "
+																aria-label="April 27, 2022" tabindex="-1">27</span><span
+																class="flatpickr-day " aria-label="April 28, 2022"
+																tabindex="-1">28</span><span class="flatpickr-day "
+																aria-label="April 29, 2022" tabindex="-1">29</span><span
+																class="flatpickr-day " aria-label="April 30, 2022"
+																tabindex="-1">30</span><span class="flatpickr-day nextMonthDay"
+																aria-label="May 1, 2022" tabindex="-1">1</span><span
+																class="flatpickr-day nextMonthDay" aria-label="May 2, 2022"
+																tabindex="-1">2</span><span class="flatpickr-day nextMonthDay"
+																aria-label="May 3, 2022" tabindex="-1">3</span><span
+																class="flatpickr-day nextMonthDay" aria-label="May 4, 2022"
+																tabindex="-1">4</span><span class="flatpickr-day nextMonthDay"
+																aria-label="May 5, 2022" tabindex="-1">5</span><span
+																class="flatpickr-day nextMonthDay" aria-label="May 6, 2022"
+																tabindex="-1">6</span><span class="flatpickr-day nextMonthDay"
+																aria-label="May 7, 2022" tabindex="-1">7</span></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="card flex-fill w-100">
+							<div class="card-header">
+								<div class="card-actions float-end">
+									<div class="dropdown position-relative">
+										<a href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" class="">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+												fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+												stroke-linejoin="round" class="feather feather-more-horizontal align-middle">
+												<circle cx="12" cy="12" r="1"></circle>
+												<circle cx="19" cy="12" r="1"></circle>
+												<circle cx="5" cy="12" r="1"></circle>
+											</svg>
+										</a>
+				
+										<div class="dropdown-menu dropdown-menu-end">
+											<a class="dropdown-item" href="#">Action</a>
+											<a class="dropdown-item" href="#">Another action</a>
+											<a class="dropdown-item" href="#">Something else here</a>
+										</div>
+									</div>
+								</div>
+								<h5 class="card-title mb-0">Real-Time</h5>
+							</div>
+							<div class="card-body">
+								<div id="map-canvas" class="map-container"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
+	</section> 
 	<!-- blogs -->
 	<section class="bg-dark">
 		<div class="container">
@@ -350,8 +596,7 @@
 				<div class="row g-4">
 					<!-- Left big card -->
 					<div class="col-lg-6">
-						<div class="card card-overlay-bottom card-grid-lg card-bg-scale"
-							style="background-image:url(assets/images/blog/1by1/01.jpg); background-position: center left; background-size: cover;">
+						<div class="card card-overlay-bottom card-grid-lg card-bg-scale custom_4">
 							<!-- Card featured -->
 							<span class="card-featured" title="Featured post"><i class="fas fa-star"></i></span>
 							<!-- Card Image overlay -->
@@ -372,7 +617,7 @@
 											<div class="nav-link">
 												<div class="d-flex align-items-center text-white position-relative">
 													<div class="avatar avatar-sm">
-														<img class="avatar-img rounded-circle" src="assets/images/avatar/11.jpg"
+														<img class="avatar-img rounded-circle" src="{{ url_for('static', filename = 'images/teacher_3.jpg') }}"
 															alt="avatar">
 													</div>
 													<span class="ms-3">by <a href="#"
@@ -392,8 +637,7 @@
 						<div class="row g-4">
 							<!-- Card item START -->
 							<div class="col-12">
-								<div class="card card-overlay-bottom card-grid-sm card-bg-scale"
-									style="background-image:url(assets/images/blog/1by1/02.jpg); background-position: center left; background-size: cover;">
+								<div class="card card-overlay-bottom card-grid-sm card-bg-scale custom_3">
 									<!-- Card Image -->
 									<!-- Card Image overlay -->
 									<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
@@ -422,8 +666,7 @@
 							<!-- Card item END -->
 							<!-- Card item START -->
 							<div class="col-md-6">
-								<div class="card card-overlay-bottom card-grid-sm card-bg-scale"
-									style="background-image:url(assets/images/blog/1by1/03.jpg); background-position: center left; background-size: cover;">
+								<div class="card card-overlay-bottom card-grid-sm card-bg-scale custom_2">
 									<!-- Card Image overlay -->
 									<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 										<div class="w-100 mt-auto">
@@ -451,8 +694,7 @@
 							<!-- Card item END -->
 							<!-- Card item START -->
 							<div class="col-md-6">
-								<div class="card card-overlay-bottom card-grid-sm card-bg-scale"
-									style="background-image:url(assets/images/blog/1by1/04.jpg); background-position: center left; background-size: cover;">
+								<div class="card card-overlay-bottom card-grid-sm card-bg-scale custom_1">
 									<!-- Card Image overlay -->
 									<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 										<div class="w-100 mt-auto">
@@ -486,7 +728,7 @@
 
 	<!-- Milestones -->
 
-	<section class="section bg-secondary">
+	<section class="section">
 		<div class="milestones">
 			<div class="parallax_background parallax-window" data-parallax="scroll"
 				data-image-src="{{ url_for('static', filename = 'images/milestones.jpg')}}" data-speed="0.8"></div>

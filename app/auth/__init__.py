@@ -26,9 +26,9 @@ login_manager.needs_refresh_message_category = "info"
 login_manager.session_protection = "strong"
 
 @login_manager.user_loader
-def load_user(userid):
+def load_user(user_id):
     from models import User
-    return User.query.get(userid)
+    return User.query.get(int(user_id))
 
 
 @login_manager.unauthorized_handler
@@ -70,7 +70,7 @@ def create_module(app, **kwargs):
     bcrypt.init_app(app)
     login_manager.init_app(app)
     from .controllers import auth
-    app.register_blueprint(auth)
+    app.register_blueprint(auth, url_prefix='/auth')
 
 
 

@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_dance.consumer.storage.sqla import OAuthConsumerMixin, SQLAlchemyStorage
 from datetime import datetime, timedelta
 from . import bcrypt, AnonymousUserMixin
-from .. import db  
+from .. import db   
 
 db = SQLAlchemy()
 
@@ -16,13 +16,13 @@ roles = db.Table(
 
 
 class User(db.Model):  
-    __tablename__ = 'Users'
+    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)  
     email = db.Column(db.String(255), unique=True, nullable=False)
     username = db.Column(db.String(255),  nullable=False, index=True, unique=True)
     password = db.Column(db.String(255))
-    date_created = db.Column(db.DateTime, default = datetime.now)  
-    posts = db.relationship('Post', backref='user', lazy='dynamic')
+    date_created = db.Column(db.DateTime, default=datetime.now)   
+    posts = db.relationship('Post', backref='user', lazy='subquery')
     
     def __init__(self, username):    
         self.username = username  
